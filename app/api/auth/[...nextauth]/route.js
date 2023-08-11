@@ -8,8 +8,8 @@ const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    })
   ],
   callbacks: {
     async session({ session }) {
@@ -31,7 +31,7 @@ const handler = NextAuth({
           await User.create({
             email: profile.email,
             username: profile.name.replace(' ', '').toLowerCase(),
-            image: profile.picture,
+            image: profile.picture
           })
         }
 
@@ -40,8 +40,8 @@ const handler = NextAuth({
         console.log('Error checking if user exists: ', error.message)
         return false
       }
-    },
-  },
+    }
+  }
 })
 
 export { handler as GET, handler as POST }

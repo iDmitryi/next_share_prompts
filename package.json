@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf node_modules .next"
+    "clean": "rm -rf node_modules .next",
+    "prettier": "prettier --write --ignore-path .prettierignore ."
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
@@ -20,5 +21,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.1"
   }
 }
